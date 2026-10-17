@@ -3,13 +3,17 @@
 class ContaBancaria
 {
 
-    public string $titular;
-    public float $saldo = 0.0;
+    private string $titular;
+    private float $saldo = 0.0;
 
     public function __construct(string $titular)
     {
 
         $this->titular = $titular;
+    }
+
+    public function setTitular(string $e):void{
+        echo $this->titular=$e;
     }
 
     public function depositar(float $valor): void
@@ -53,3 +57,6 @@ $conta1->depositar(-50);
 
 echo $conta1->exibirSaldo();
 echo $conta2->exibirSaldo();
+
+echo $conta1->getSaldo();
+echo $conta1->exibirSaldo();
